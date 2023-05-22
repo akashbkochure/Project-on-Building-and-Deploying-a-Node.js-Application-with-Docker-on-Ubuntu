@@ -21,7 +21,7 @@ pipeline {
         
         stage('Push'){
             steps{
-        	     sh "sudo docker login -u akashbkochure -p MaYuR940206"
+        	     sh "sudo docker login -u akashbkochure -p ****"
                  sh 'sudo docker push akashbkochure/nodo-todo-app-test:latest'
             }
         }  
