@@ -21,7 +21,7 @@ pipeline {
         
         stage('Push'){
             steps{
-        	     sh "sudo docker login -u akashbkochure -p ****"
+        	     sh "sudo docker login -u akashbkochure -p MaYuR940206"
                  sh 'sudo docker push akashbkochure/nodo-todo-app-test:latest'
             }
         }  
@@ -32,7 +32,7 @@ pipeline {
                 sh 'sudo docker rm nodetodoapp || true'
                 sh 'sudo docker run -d --name nodetodoapp akashbkochure/nodo-todo-app-test:latest'
                 sh '''
-                ssh -i akash.pem -o StrictHostKeyChecking=no ubuntu@3.80.210.21 <<EOF
+                ssh -i akash.pem -o StrictHostKeyChecking=no ubuntu@184.73.150.150<<EOF
                 sudo docker login -u akashbkochure -p MaYuR940206
                 sudo docker pull akashbkochure/nodo-todo-app-test:latest
                 sudo docker stop nodetodoapp || true
